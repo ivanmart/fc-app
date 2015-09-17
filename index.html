@@ -9,9 +9,9 @@
 		<section id="fc-app">
 			<header id="header">
 				<h1>fashioncommunity</h1>
+				<p><a href="#/men/342/">Men</a> | <a href="#/women/">Women</a> | <a href="#/blog/">Blog</a> | <a href="#/about/">about</a></p>
 			</header>
 			<section id="main">
-				<p><a href="/men/">Men</a> | <a href="/women/">Women</a> | <a href="/blog/">Blog</a> | <a href="/about/">about</a></p>
 			</section>
 			<footer id="footer"></footer>
 		</section>
@@ -19,18 +19,23 @@
 			All rights reserved.
 		</footer>
 		<script id="index-template" type="text/x-handlebars-template">
+			Index
 		</script>
 		<script id="list-template" type="text/x-handlebars-template">
+			List {{gen}}
 		</script>
 		<script id="detail-template" type="text/x-handlebars-template">
+			Detail id: {{id}}
 		</script>
 		<script id="blog-template" type="text/x-handlebars-template">
+			Blog
 		</script>
 		<script id="about-template" type="text/x-handlebars-template">
+			About
 		</script>
-		<script src="js/jquery.js"></script>
-		<script src="js/director.js"></script>
-		<script src="js/handlebars.js"></script>
+		<script src="node_modules/jquery/dist/jquery.js"></script>
+		<script src="node_modules/handlebars/dist/handlebars.js"></script>
+		<script src="node_modules/director/build/director.js"></script>
 		<script src="js/app.js"></script>
 	</body>
 </html>
