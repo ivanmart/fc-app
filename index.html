@@ -4,40 +4,104 @@
 		<meta charset="utf-8">
 		<title>fashioncommunity</title>
 		<link rel="stylesheet" href="css/app.css">
+		<link href='https://fonts.googleapis.com/css?family=Fira+Sans:400,700,400italic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
-		<section id="fc-app">
+
+		<div id="intro"><div>fashioncommunity.su</div></div>
+		<div id="loading"><div>loading...</div></div>
+		<div id="detail-holder">
+			<a class="close"><span></span></a>
+			<div id="detail-content"></div>
+		</div>
+        <section id="fc-app">
 			<header id="header">
-				<h1>fashioncommunity</h1>
-				<div id="menu">
-					<p><a href="#/men/342/">Men</a> | <a href="#/women/">Women</a> | <a href="#/blog/">Blog</a> | <a href="#/about/">about</a></p>
-				</div>
+				<h1>fashioncommunity.su</h1>
+				<a id="burger" class="burger">
+					<span class="line1"></span>
+					<span class="line2"></span>
+					<span class="line3"></span>
+				</a>
+				<nav class="menu">
+					<div class="menu-head">
+						<span class="title">FASHIONCOMMUNITY</span>
+						<a class="close"><span></span></a>
+					</div>
+					<ul>
+						<li><a href="#/men/">Мужчины</a></li>
+						<li><a href="#/women/">Женщины</a></li>
+						<li><a href="#/blog/">Блог</a></li>
+						<li><a href="#/anketa/">Стать моделью</a></li>
+						<li><a href="#/about/">О нас</a></li>
+					</ul>
+				</nav>
 			</header>
 			<section id="main">
+
 			</section>
-			<footer id="footer"></footer>
 		</section>
-		<footer id="info">
-			All rights reserved.
-		</footer>
+
 		<script id="index-template" type="text/x-handlebars-template">
-			Index
+			<div class="index-big"><a href="#/women/">Мужчины</a></div>
+			<div class="index-big"><a href="#/men/">Женщины</a></div>
 		</script>
+
 		<script id="list-template" type="text/x-handlebars-template">
-			List {{gen}}
+			<div class="list-holder">
+				<ul>
+				{{#each models}}
+					<li>
+						<a href="#/{{../gen}}/{{id}}/">
+							<img src="http://www.fashiontime.ru{{photos.[0]}}">
+							<div>{{name}}</div>
+						</a>
+					</li>
+				{{/each}}
+				</ul>
+			</div>
 		</script>
+
 		<script id="detail-template" type="text/x-handlebars-template">
-			Detail id: {{id}}
+			<div class="detail-gallery">
+				<ul>
+					<li>
+						<div class="titlepage">
+							<h1>{{model.name}}</h1>
+							<p><h3>Рост</h3>{{model.growth}}</p>
+							<p><h3>Обхват груди</h3>{{model.size1}}</p>
+							<p><h3>Обхват талии</h3>{{model.size2}}</p>
+							<p><h3>Обхват бедер</h3>{{model.size3}}</p>
+						</div>
+					</li>
+				{{#each model.photos}}
+					<li><img src="http://www.fashiontime.ru{{this}}"></li>
+				{{/each}}
+				</ul>
+				<a class="next"><span>&gt;</span></a>
+				<a class="prev"><span>&lt;</span></a>
+			</div>
 		</script>
+
 		<script id="blog-template" type="text/x-handlebars-template">
 			Blog
 		</script>
+
 		<script id="about-template" type="text/x-handlebars-template">
-			About
+			<p>{{agency.about}}</p>
+			<p>Адрес: {{agency.address}}</p>
+			<p>Email: {{agency.email}}</p>
 		</script>
+
+		<script id="anketa-template" type="text/x-handlebars-template">
+			Anketa
+		</script>
+
 		<script src="node_modules/jquery/dist/jquery.js"></script>
 		<script src="node_modules/handlebars/dist/handlebars.js"></script>
 		<script src="node_modules/director/build/director.js"></script>
+		<script src="node_modules/isotope-layout/dist/isotope.pkgd.js"></script>
+		<script src="node_modules/imagesloaded/imagesloaded.js"></script>
 		<script src="js/app.js"></script>
+
 	</body>
 </html>

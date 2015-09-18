@@ -1,0 +1,369 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font: 14px/18px "Fira Sans", sans-serif;
+}
+
+.burger {
+    width: 50px;
+    height: 50px;
+    padding-left: 10px;
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    opacity: 1;
+}
+
+.burger span {
+    width: 26px;
+    height: 3px;
+    background: #111;
+    display: block;
+    position: absolute;
+    left: 18px;
+}
+
+.burger .line1 {
+    top: 17px;
+}
+
+.burger .line2 {
+    top: 26px;
+}
+
+.burger .line3 {
+    top: 35px;
+}
+
+.detail-gallery a, .burger span, .menu li a, .detail-gallery li {
+	-webkit-transition: all .3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+    -moz-transition: all .3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+    -ms-transition: all .3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+    -o-transition: all .3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+    transition: all .3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+}
+
+.menu, .list-holder li img, .list-holder li div {
+	-webkit-transition: all .4s cubic-bezier(1, 0.045, 0.355, 1.000);
+    -moz-transition: all .4s cubic-bezier(1, 0.045, 0.355, 1.000);
+    -ms-transition: all .4s cubic-bezier(1, 0.045, 0.355, 1.000);
+    -o-transition: all .4s cubic-bezier(1, 0.045, 0.355, 1.000);
+    transition: all .4s cubic-bezier(1, 0.045, 0.355, 1.000);
+}
+
+#intro, #intro div {
+    transition: all 2s cubic-bezier(.78,0,.22,.95);
+}
+
+.burger-hover span {
+	background: #888;
+}
+
+.menu {
+	position: fixed;
+	top: 0;
+	right: -220px;
+	width: 220px;
+	left: auto;
+	text-align: left;
+	background: #ccc;
+	height: 100%;
+	z-index: 50;
+}
+
+.menu ul {
+	list-style: none;
+    font-size: 110%;
+    text-transform: uppercase;
+    line-height:27px;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+.menu li a {
+	color: #444;
+	text-decoration: none;
+}
+
+.menu li a:hover {
+	color: #888;
+}
+
+.menu a.active {
+	color: #fff !important;
+}
+
+.menu-head {
+	background-color: #aaa;
+	height: 50px;
+}
+
+.menu-open {
+	-webkit-transform: translate3d(-220px, 0, 0);
+	-moz-transform: translate3d(-220px, 0, 0);
+	-ms-transform: translate3d(-220px, 0, 0);
+	-o-transform: translate3d(-220px, 0, 0);
+	transform: translate3d(-220px, 0, 0);
+	opacity: 1;
+
+}
+
+.menu .close {
+	float:right;
+	right: 3px;
+	cursor: pointer;
+}
+
+.menu .close span {
+	display: block;
+	width: 50px;
+	height: 50px;
+	background: transparent url("../images/sprite.png") -6px -6px no-repeat;
+}
+
+.menu-head .title {
+	float: left;
+	padding-top: 16px;
+    padding-left: 20px;
+}
+
+#loading {
+	display: block;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: #fff;
+	color: #000;
+	z-index: 90;
+}
+
+#loading div  {
+	position: absolute;
+	top:50%;
+	text-align: center;
+	width: 100%;
+	font-size: 120%;
+	text-transform: uppercase;
+
+}
+
+#intro {
+	display: none;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: #000;
+	color: #fff;
+	z-index: 100;
+}
+
+#intro div  {
+	position: absolute;
+	top:50%;
+	text-align: center;
+	width: 100%;
+	font-size: 250%;
+	text-transform: uppercase;
+
+}
+
+#intro.animate1 div {
+	font-size:220% !important;
+}
+
+.animate2 {
+	background: #fff !important;
+}
+
+.animate3 {
+	opacity: 0;
+}
+
+header {
+	height: 60px;
+}
+
+header h1 {
+	padding-left: 30px;
+    padding-top: 20px;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+.list-holder li {
+	list-style: none;
+	padding:20px;
+	cursor: pointer;
+}
+
+.list-holder li a {
+	text-align: center;
+	color: #000;
+	text-decoration: none;
+}
+
+.list-holder img {
+	width: 225px;
+}
+
+.list-holder li:hover img {
+	transform: scale(1.15);
+	-webkit-filter: brightness(50%);
+    -moz-filter: brightness(50%);
+    filter: url(#brightness); /* required for FF */
+    filter: brightness(50%);
+}
+
+.list-holder li:hover div {
+	opacity: 1;
+	transform: translateY(-10px);
+}
+
+.list-holder ul li div {
+	position: absolute;
+	width: 225px;
+	bottom: 40px;
+	color: #fff;
+	opacity: 0;
+	text-transform: uppercase;
+	font-size: 15px;
+}
+
+
+#main {
+	padding: 0px 40px 40px 40px;
+}
+
+
+/* slider */
+
+#detail-holder {
+	display: none;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: #fff;
+	color: #000;
+	z-index: 80;
+	-moz-user-select: -moz-none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+#detail-holder .close {
+	float:right;
+	right: 3px;
+	cursor: pointer;
+}
+
+#detail-holder .close span {
+	display: block;
+	width: 50px;
+	height: 50px;
+	background: transparent url("../images/sprite.png") -6px -6px no-repeat;
+}
+
+.detail-gallery li {
+	display: none;
+    position: relative;
+    overflow: hidden;
+    height: 600px;
+    float: left;
+    text-align: right;
+    width: 400px;
+}
+
+
+.detail-gallery .titlepage {
+	padding: 20px;
+}
+
+.titlepage h3 {
+	padding-top: 20px;
+	font-size: 12px;
+	text-transform: uppercase;
+}
+
+.titlepage h1 {
+	padding-bottom: 20px;
+	font-size: 21px;
+	text-transform: uppercase;
+}
+
+.detail-gallery li img {
+	height: 100%;
+}
+
+.detail-gallery {
+	margin-top: 50px;
+}
+
+.detail-gallery .prev, .detail-gallery .next {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    margin: 120px 0;
+    cursor: pointer;
+	z-index: 70;
+	font-size: 50px;
+	cursor: pointer;
+}
+
+.detail-gallery .next {
+	left: 50%;
+}
+
+.detail-gallery .next span, .detail-gallery .prev span {
+    top: 50%;
+    margin-top: -30px;
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    padding: 20px;
+}
+
+
+.detail-gallery .next span {
+	right: 0;
+}
+
+.detail-gallery .prev {
+	left: 0;
+}
+
+.detail-gallery ul {
+    width: 800px;
+    height: 400px;
+    position: absolute;
+    left: 50%;
+    margin-left: -400px;
+}
+
+.detail-gallery {
+	text-align: center;
+}
+
+.detail-gallery a {
+	color: #aaa;
+}
+
+.detail-gallery a:hover {
+	color: #000;
+}
+
+.detail-gallery ul li:nth-child(1), .detail-gallery ul li:nth-child(2) {
+	display: inline-block;
+}
+
+::-webkit-scrollbar { 
+    display: none; 
+}
