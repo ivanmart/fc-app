@@ -1,11 +1,11 @@
-/*global jQuery, Handlebars, Router */
 (function ($) {
 	'use strict';
 
+	// Backend url
 	var baseUrl = "http://www.fashiontime.ru";
-	var dataUrl = baseUrl + "/groups/fashioncommunity/?json";
+	var dataUrl = baseUrl + "/groups/i_model/?json";
 
-
+	// Caching
 	var indexTemplate = Handlebars.compile($('#index-template').html());
 	var listTemplate = Handlebars.compile($('#list-template').html());
 	var detailTemplate = Handlebars.compile($('#detail-template').html());
@@ -57,6 +57,7 @@
 		}
 		$(document).on('click', '.detail-gallery a.prev', prev);
 
+		// close detail view
 		var close = function () {
 			$('#detail-holder').fadeOut();
 			window.location.href = '#/'+curGen+'/';
@@ -77,6 +78,7 @@
 	};
 
 	var index = function() {
+		curGen = false;
 		$main.html(indexTemplate());
 	};
 
@@ -86,11 +88,11 @@
 			$main.html(listTemplate({gen: gen, models: data.models[gen]}));
 
 			// Isotope
-			var $grid = $('.list-holder ul');
+			var $grid = $('.list-holder ul').isotope({itemSelector: '.grid-item'});
 
 			// layout Isotope after each image loads
 			$grid.imagesLoaded().progress( function() {
-				$grid.isotope();
+				$grid.isotope('layout');
 			});
 
 			curGen = gen;
@@ -101,31 +103,25 @@
 		shown = 1;
 		var model = $.grep(data.models[gen], function(e){return e.id == id});
 		cnt = model[0].photos.length;
-		console.log(cnt);
 		$detail.html(detailTemplate({model: model[0]}));
 		$('#detail-holder').fadeIn();
 		if(!curGen) list(gen);
 	};
 
 	var about = function () {
-		$main.html(aboutTemplate({agency: data}));
+		curGen = false;
+		$main.html($(aboutTemplate({agency: data})));
 	};
 
 	var blog = function () {
-		console.log('blog invoked');
+		curGen = false;
+		$main.html('Blog here will be.');
 	};
 
 	var anketa = function () {
-		console.log('anketa invoked');
+		curGen = false;
+		$main.html('Anketa here will be.');
 	};
-
-	// var beforeRoute = function () {
-	// 	console.log('beforeRoute');
-	// 	$main.css('opacity', 0);
-	// 	$main.one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(e) {
-	// 		$main.css('opacity',1);
-	// 	});
-	// }
 
 	bindEvents ();
 
@@ -145,7 +141,7 @@
 		data = json;
 //		console.log (data);
 
-		new Router({
+		var router = Router({
 		    '/': index,
 		    '/(men|women)/?': list,
 		    '/(men|women)/:id/?': detail,
@@ -157,6 +153,8 @@
 					$('.menu').removeClass('menu-open');
 				}
 		    }).init();
+		
+		if(!window.location.hash) router.setRoute('/');
 
 	    $('#loading').animate({opacity:0}, 500, function(){this.remove()});
 

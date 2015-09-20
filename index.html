@@ -16,7 +16,7 @@
 		</div>
         <section id="fc-app">
 			<header id="header">
-				<h1>fashioncommunity.su</h1>
+				<h1><a href="#/">fashioncommunity.su</a></h1>
 				<a id="burger" class="burger">
 					<span class="line1"></span>
 					<span class="line2"></span>
@@ -24,7 +24,7 @@
 				</a>
 				<nav class="menu">
 					<div class="menu-head">
-						<span class="title">FASHIONCOMMUNITY</span>
+						<span class="title"><a href="#/">FASHIONCOMMUNITY</a></span>
 						<a class="close"><span></span></a>
 					</div>
 					<ul>
@@ -36,21 +36,31 @@
 					</ul>
 				</nav>
 			</header>
-			<section id="main">
-
-			</section>
+			<section id="main"></section>
 		</section>
 
 		<script id="index-template" type="text/x-handlebars-template">
-			<div class="index-big"><a href="#/women/">Мужчины</a></div>
-			<div class="index-big"><a href="#/men/">Женщины</a></div>
+			<ul class="index-list">
+				<li class="women">
+					<a href="#/women/">
+						<div class="bkg"></div>
+						<div class="title">Женщины</div>
+					</a>
+				</li>
+				<li class="men">
+					<a href="#/men/">
+						<div class="bkg"></div>
+						<div class="title">Мужчины</div>
+					</a>
+				</li>
+			</ul>
 		</script>
 
 		<script id="list-template" type="text/x-handlebars-template">
 			<div class="list-holder">
 				<ul>
 				{{#each models}}
-					<li>
+					<li class="grid-item">
 						<a href="#/{{../gen}}/{{id}}/">
 							<img src="http://www.fashiontime.ru{{photos.[0]}}">
 							<div>{{name}}</div>
@@ -87,9 +97,11 @@
 		</script>
 
 		<script id="about-template" type="text/x-handlebars-template">
-			<p>{{agency.about}}</p>
-			<p>Адрес: {{agency.address}}</p>
-			<p>Email: {{agency.email}}</p>
+			<div class="about-holder">
+				<p>{{{agency.about}}}</p><br>
+				<p>Адрес: {{agency.address}}</p><br><br>
+				<p>Email: {{agency.email}}</p>
+			</div>
 		</script>
 
 		<script id="anketa-template" type="text/x-handlebars-template">

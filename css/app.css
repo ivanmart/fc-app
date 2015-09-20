@@ -7,6 +7,14 @@ body {
 	font: 14px/18px "Fira Sans", sans-serif;
 }
 
+a {
+	text-decoration: none;
+}
+
+#header a {
+	color: #000;
+}
+
 .burger {
     width: 50px;
     height: 50px;
@@ -14,7 +22,7 @@ body {
     display: block;
     cursor: pointer;
     position: absolute;
-    top: 0;
+    top: 2px;
     right: 0;
     z-index: 2;
     opacity: 1;
@@ -49,7 +57,7 @@ body {
     transition: all .3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
 }
 
-.menu, .list-holder li img, .list-holder li div {
+.menu, .list-holder li img, .list-holder li div, .index-list li .bkg, .index-list li .title {
 	-webkit-transition: all .4s cubic-bezier(1, 0.045, 0.355, 1.000);
     -moz-transition: all .4s cubic-bezier(1, 0.045, 0.355, 1.000);
     -ms-transition: all .4s cubic-bezier(1, 0.045, 0.355, 1.000);
@@ -58,6 +66,10 @@ body {
 }
 
 #intro, #intro div {
+	-webkit-transition: all 2s cubic-bezier(.78,0,.22,.95);
+    -moz-transition: all 2s cubic-bezier(.78,0,.22,.95);
+    -ms-transition: all 2s cubic-bezier(.78,0,.22,.95);
+    -o-transition: all 2s cubic-bezier(.78,0,.22,.95);
     transition: all 2s cubic-bezier(.78,0,.22,.95);
 }
 
@@ -88,7 +100,6 @@ body {
 
 .menu li a {
 	color: #444;
-	text-decoration: none;
 }
 
 .menu li a:hover {
@@ -101,7 +112,7 @@ body {
 
 .menu-head {
 	background-color: #aaa;
-	height: 50px;
+	height: 60px;
 }
 
 .menu-open {
@@ -116,7 +127,7 @@ body {
 
 .menu .close {
 	float:right;
-	right: 3px;
+	padding-top: 5px;
 	cursor: pointer;
 }
 
@@ -129,8 +140,12 @@ body {
 
 .menu-head .title {
 	float: left;
-	padding-top: 16px;
+	padding-top: 22px;
     padding-left: 20px;
+}
+
+.menu-head .title a {
+	color: #000;
 }
 
 #loading {
@@ -174,7 +189,7 @@ body {
 }
 
 #intro.animate1 div {
-	font-size:220% !important;
+	opacity: 0;
 }
 
 .animate2 {
@@ -191,9 +206,15 @@ header {
 
 header h1 {
 	padding-left: 30px;
-    padding-top: 20px;
+    padding-top: 23px;
     font-weight: normal;
     text-transform: uppercase;
+}
+
+
+/* images list */
+.list-holder {
+	padding: 0 50px 50px 50px;
 }
 
 .list-holder li {
@@ -205,7 +226,6 @@ header h1 {
 .list-holder li a {
 	text-align: center;
 	color: #000;
-	text-decoration: none;
 }
 
 .list-holder img {
@@ -233,11 +253,6 @@ header h1 {
 	opacity: 0;
 	text-transform: uppercase;
 	font-size: 15px;
-}
-
-
-#main {
-	padding: 0px 40px 40px 40px;
 }
 
 
@@ -271,6 +286,14 @@ header h1 {
 	background: transparent url("../images/sprite.png") -6px -6px no-repeat;
 }
 
+@media (min-height: 700px) {
+	.detail-gallery ul {
+	    position: absolute;
+	    top: 50%;
+	    margin-top: -300px;
+	}
+}
+
 .detail-gallery li {
 	display: none;
     position: relative;
@@ -286,10 +309,16 @@ header h1 {
 	padding: 20px;
 }
 
+.titlepage {
+	font-size: 17px;
+}
+
 .titlepage h3 {
 	padding-top: 20px;
-	font-size: 12px;
+	font-size: 13px;
 	text-transform: uppercase;
+	color: #555;
+	font-weight: normal;
 }
 
 .titlepage h1 {
@@ -366,4 +395,87 @@ header h1 {
 
 ::-webkit-scrollbar { 
     display: none; 
+}
+
+
+/* index page */
+.index-list {
+	list-style: none;
+    font-size: 110%;
+    text-transform: uppercase;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+}
+
+.index-list li {
+	float: left;
+	width: 50%;
+	height: 100%;
+}
+
+.index-list li.women div.bkg {
+	background: url(../images/woman.jpg) center center no-repeat;
+	position: absolute;
+	width:100%;
+	height:100%;
+}
+
+.index-list li.men div.bkg {
+	background: url(../images/man.jpg) center center no-repeat;
+	position: absolute;
+	width:100%;
+	height:100%;
+}
+
+@media (min-width: 1470px) {
+	.index-list div.bkg {
+		background-size: cover !important;
+	}
+}
+
+.index-list a {
+	position: absolute;
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    color: #fff;
+}
+
+.index-list div.title {
+    position: absolute;
+    width: 100%;
+    bottom: 20%;
+    color: #fff;
+    opacity: 0;
+    text-transform: uppercase;
+    font-size: 35px;
+ }
+
+@media (max-width: 700px) {
+	.index-list li, .index-list a {
+		float: none;
+		width: 100%;
+		height: 50%;
+	}
+}
+
+.index-list li:hover .bkg {
+	-webkit-filter: brightness(50%);
+    -moz-filter: brightness(50%);
+    filter: url(#brightness); /* required for FF */
+    filter: brightness(50%);
+}
+
+.index-list li:hover .title {
+	opacity: 1;
+	transform: translateY(-20px)
+}
+
+
+
+.about-holder {
+	padding: 0px 50px 50px 50px;
 }
