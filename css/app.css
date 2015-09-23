@@ -371,10 +371,29 @@ header h1 {
 
 .detail-gallery ul {
     width: 800px;
-    height: 400px;
+    height: 600px;
     position: absolute;
     left: 50%;
     margin-left: -400px;
+}
+
+@media (min-width: 1280px) {
+	.detail-gallery ul {
+		width: 1024px;
+		height: 768px;
+		margin-left: -512px;
+		margin-top: -370px;
+	}
+	.detail-gallery li {
+		width: 512px;
+		height: 768px;
+	}
+	.titlepage, .titlepage h1 {
+		font-size: 150%;
+	}
+	.titlepage h3 {
+		font-size: 15px;
+	}
 }
 
 .detail-gallery {
