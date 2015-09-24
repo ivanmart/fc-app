@@ -169,7 +169,7 @@ a {
 }
 
 #intro {
-	display: block;
+	display: none;
 	position: fixed;
 	width: 100%;
 	height: 100%;
@@ -253,6 +253,7 @@ header h1 {
 	opacity: 0;
 	text-transform: uppercase;
 	font-size: 15px;
+	text-shadow: 0 0 10px rgba(0,0,0,0.8);
 }
 
 
@@ -277,6 +278,7 @@ header h1 {
 	float:right;
 	right: 3px;
 	cursor: pointer;
+	z-index: 99;
 }
 
 #detail-holder .close span {
@@ -340,7 +342,7 @@ header h1 {
     top: 0;
     bottom: 0;
     width: 50%;
-    margin: 120px 0;
+    margin: 45px 0;
     cursor: pointer;
 	z-index: 70;
 	font-size: 50px;
@@ -471,9 +473,10 @@ header h1 {
     opacity: 0;
     text-transform: uppercase;
     font-size: 35px;
+	text-shadow: 0 0 10px rgba(0,0,0,0.8);
  }
 
-@media (max-width: 700px) {
+@media (max-width: 768px) {
 	.index-list li, .index-list a {
 		float: none;
 		width: 100%;
@@ -498,3 +501,63 @@ header h1 {
 .about-holder {
 	padding: 0px 50px 50px 50px;
 }
+
+
+/* mobile/touch */
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px)  {
+	.list-holder ul li div, .index-list div.title {
+		opacity: 1;
+	}
+
+}
+
+@media (max-width: 480px) {
+	.detail-gallery ul {
+		width: 400px;
+		height: 300px;
+		margin-left: -200px;
+		margin-top: -40px;
+	}
+	.detail-gallery li {
+		width: 200px;
+		height: 300px;
+	}
+	.titlepage, .titlepage h1 {
+		font-size: 90%;
+		padding: 0;
+	}
+	.titlepage h3 {
+		font-size: 10px;
+	    padding-top: 15px;
+	}
+	.list-holder {
+		padding-left: 109px;
+	}
+}
+
+@media (max-width: 320px) {
+	.detail-gallery ul {
+		width: 300px;
+		height: 225px;
+		margin-left: -150px;
+		margin-top: 75px;
+	}
+	.detail-gallery li {
+		width: 150px;
+		height: 225px;
+	}
+	.titlepage, .titlepage h1 {
+		font-size: 90%;
+		padding: 0;
+		line-height: 12px;
+	}
+	.titlepage h3 {
+		font-size: 10px;
+	    padding-top: 15px;
+	}
+	.list-holder {
+		padding-left: 28px;
+	}
+}
+

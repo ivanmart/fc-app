@@ -156,12 +156,6 @@
 		
 		if(!window.location.hash) router.setRoute('/');
 
-if (Modernizr.touch) { 
-    alert('Touch Screen');
-} else { 
-    alert('No Touch Screen');
-}
-
 	    $('#loading').animate({opacity:0}, 500, function(){this.remove()});
 
 	});
