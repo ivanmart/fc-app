@@ -255,15 +255,6 @@ header h1 {
 	font-size: 15px;
 }
 
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px)  { 
-	.list-holder ul li div {
-		opacity: 1;
-	}
-
-}
-
 
 /* slider */
 
