@@ -3,7 +3,7 @@
 
 	// Backend url
 	var baseUrl = "http://www.fashiontime.ru";
-	var dataUrl = baseUrl + "/groups/i_model/?json";
+	var dataUrl = baseUrl + "/groups/fashioncommunity/?json";
 
 	// Caching
 	var indexTemplate = Handlebars.compile($('#index-template').html());
