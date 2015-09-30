@@ -136,6 +136,7 @@
 
 	// get all data at once
 	var data;
+	$.ajaxSetup({ cache: false });
 	$.getJSON(dataUrl, function(json){
 		
 		data = json;
