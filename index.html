@@ -79,9 +79,15 @@
 						<div class="titlepage">
 							<h1>{{model.name}}</h1>
 							<p><h3>Рост</h3>{{model.growth}}</p>
-							<p><h3>Обхват груди</h3>{{model.size1}}</p>
-							<p><h3>Обхват талии</h3>{{model.size2}}</p>
-							<p><h3>Обхват бедер</h3>{{model.size3}}</p>
+							{{#if model.size1}}
+								<p><h3>Обхват груди</h3>{{model.size1}}</p>
+							{{/if}}
+							{{#if model.size2}}
+								<p><h3>Обхват талии</h3>{{model.size2}}</p>
+							{{/if}}
+							{{#if model.size3}}
+								<p><h3>Обхват бедер</h3>{{model.size3}}</p>
+							{{/if}}
 						</div>
 					</li>
 				{{#each model.photos}}
