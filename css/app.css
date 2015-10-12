@@ -122,7 +122,6 @@ a {
 	-o-transform: translate3d(-220px, 0, 0);
 	transform: translate3d(-220px, 0, 0);
 	opacity: 1;
-
 }
 
 .menu .close {
@@ -288,10 +287,9 @@ header h1 {
 	background: transparent url("../images/sprite.png") -6px -6px no-repeat;
 }
 
-@media (min-height: 700px) {
+@media (min-height: 700px) and (min-width: 736px) {
 	.detail-gallery ul {
 	    position: absolute;
-	    top: 50%;
 	    margin-top: -300px;
 	}
 }
@@ -376,7 +374,9 @@ header h1 {
     height: 600px;
     position: absolute;
     left: 50%;
+    top: 50%;
     margin-left: -400px;
+    margin-top: -300px;
 }
 
 @media (min-width: 1280px) {
@@ -505,19 +505,19 @@ header h1 {
 
 /* mobile/touch */
 
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px)  {
+@media (min-device-width : 768px) and (max-device-width : 1024px)  {
 	.list-holder ul li div, .index-list div.title {
 		opacity: 1;
 	}
 
 }
 
-@media (max-width: 480px) {
+@media (max-width: 736px) {
 	.detail-gallery ul {
 		width: 400px;
 		height: 300px;
 		margin-left: -200px;
-		margin-top: -40px;
+		margin-top: -150px;
 	}
 	.detail-gallery li {
 		width: 200px;
@@ -541,7 +541,7 @@ header h1 {
 		width: 300px;
 		height: 225px;
 		margin-left: -150px;
-		margin-top: 75px;
+		margin-top: -112px;
 	}
 	.detail-gallery li {
 		width: 150px;
@@ -559,5 +559,99 @@ header h1 {
 	.list-holder {
 		padding-left: 28px;
 	}
+}
+
+@media (min-device-width : 2560px) and (min-device-width : 1600px){
+	.detail-gallery ul {
+		width: 2000px;
+		height: 1500px;
+		margin-left: -1000px;
+		margin-top: -750px;
+	}
+	.detail-gallery li {
+		width: 1000px;
+		height: 1500px;
+	}
+	header {
+		height: 120px;
+	}
+	header h1 {
+	    font-size: 44px !important;
+	    padding-left: 42px;
+	    padding-top: 53px;
+    }
+
+	.burger {
+	    width: 90px;
+	    height: 100px;
+	    padding-left: 20px;
+	    top: 10px;
+	}
+
+	.burger span {
+	    width: 48px;
+	    height: 6px;
+	}
+
+	.burger .line1 {
+	    top: 30px;
+	}
+
+	.burger .line2 {
+	    top: 47px;
+	}
+
+	.burger .line3 {
+	    top: 64px;
+	}
+
+	.menu {
+		width: 360px;
+		right: -360px;
+		font-size: 180%;
+	}
+
+	.menu-head {
+		height: 120px;
+	}
+
+	.menu-head .title {
+		padding-top: 54px;
+	}
+
+	.menu .close {
+		padding-top: 32px;
+	}
+
+	.menu-open {
+		-webkit-transform: translate3d(-360px, 0, 0);
+		-moz-transform: translate3d(-360px, 0, 0);
+		-ms-transform: translate3d(-360px, 0, 0);
+		-o-transform: translate3d(-360px, 0, 0);
+		transform: translate3d(-360px, 0, 0);
+		opacity: 1;
+	}
+
+	.menu ul {
+		line-height: 45px;
+	}
+
+	.titlepage, .titlepage h1 {
+	    font-size: 210%;
+	}
+
+	.detail-gallery .titlepage {
+	    padding: 70px;
+	}
+
+	.titlepage h3 {
+	    font-size: 22px;
+	    padding-top: 40px;
+	    line-height: 36px;
+	}
+
+
+
+
 }
 
