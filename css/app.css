@@ -220,6 +220,9 @@ header h1 {
 	list-style: none;
 	padding:20px;
 	cursor: pointer;
+	width: 205px;
+    height: 262px;
+    overflow: hidden;
 }
 
 .list-holder li a {
