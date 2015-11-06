@@ -1,41 +1,42 @@
 (function ($) {
 	'use strict';
 
-	// Backend url
-	var baseUrl = "http://www.fashiontime.ru";
-	var dataUrl = baseUrl + "/groups/fashioncommunity/?json";
+	// backend url
+	var baseUrl = 'http://www.fashiontime.ru';
+	var dataUrl = baseUrl + '/groups/fashioncommunity/?json';
 
-	// Caching
+	// caching
 	var indexTemplate = Handlebars.compile($('#index-template').html());
 	var listTemplate = Handlebars.compile($('#list-template').html());
 	var detailTemplate = Handlebars.compile($('#detail-template').html());
 	var blogTemplate = Handlebars.compile($('#blog-template').html());
 	var aboutTemplate = Handlebars.compile($('#about-template').html());
-	var anketaTemplate = Handlebars.compile($('#anketa-template').html());
+	var enrollTemplate = Handlebars.compile($('#enroll-template').html());
 	var $fcApp = $('#fc-app');
 	var $header = $fcApp.find('#header');
 	var $main = $fcApp.find('#main');
 	var $detail = $('#detail-content');
 
-
+	// binding events
 	var bindEvents = function () {
 
+		// open menu
 		$('.burger, .menu .close').on('click',function(){$('.menu').toggleClass('menu-open')});
 
+		// menu icon animation
 		$('.burger').on({
 			mouseenter: function() {
-				$( this ).addClass( "burger-hover" );
+				$( this ).addClass('burger-hover');
 			}, mouseleave: function() {
-				$( this ).removeClass( "burger-hover" );
+				$( this ).removeClass('burger-hover');
 			}
 		});
 
+		// menu click
 		$('.menu a').on('click',function(){
 			$('.menu a').removeClass('active');
 			$(this).addClass('active');
 		});
-
-		// slider
 
 		// next slide
 		var next = function () {
@@ -64,7 +65,7 @@
 		}
 		$('#detail-holder .close').on('click',close);
 
-		// keys
+		// keys events
 		$(document).on('keydown', function(e){
 		    if (e.keyCode == 27) {
 		    	close();
@@ -77,11 +78,13 @@
 
 	};
 
+	// index page
 	var index = function() {
 		curGen = false;
 		$main.html(indexTemplate());
 	};
 
+	// list models
 	var list = function (gen) {
 		if(curGen) $('#detail-holder').fadeOut();
 		if (gen != curGen) {
@@ -99,6 +102,7 @@
 		}
 	};
 
+	// detail model view
 	var detail = function (gen, id) {
 		shown = 1;
 		var model = $.grep(data.models[gen], function(e){return e.id == id});
@@ -108,20 +112,27 @@
 		if(!curGen) list(gen);
 	};
 
+	// about page
 	var about = function () {
 		curGen = false;
 		$main.html($(aboutTemplate({agency: data})));
 	};
 
+	// blog page
 	var blog = function () {
 		curGen = false;
-		$main.html('Blog here will be.');
+		console.log(data);
+		$main.html(blogTemplate({agency: data, baseUrl: baseUrl}));
 	};
 
-	var anketa = function () {
+	// enrollment form
+	var enroll = function () {
 		curGen = false;
-		$main.html('Anketa here will be.');
+		$main.html('Enrollment form here will be.');
 	};
+
+
+	// main
 
 	bindEvents ();
 
@@ -140,15 +151,15 @@
 	$.getJSON(dataUrl, function(json){
 		
 		data = json;
-//		console.log (data);
 
+		// router
 		var router = Router({
 		    '/': index,
 		    '/(men|women)/?': list,
 		    '/(men|women)/:id/?': detail,
 		    '/about/?': about,
 		    '/blog/?': blog,
-		    '/anketa/?': anketa
+		    '/enroll/?': enroll
 		    }).configure({
 		    	before: function() {
 					$('.menu').removeClass('menu-open');

@@ -168,7 +168,7 @@ a {
 }
 
 #intro {
-	display: block;
+	display: none;
 	position: fixed;
 	width: 100%;
 	height: 100%;
@@ -506,6 +506,22 @@ header h1 {
 
 .about-holder {
 	padding: 0px 50px 50px 50px;
+}
+
+.blog-holder {
+	position: absolute;
+	width: 700px;
+	left: 50%;
+	margin-left: -350px;
+}
+
+.blog-holder ul li {
+	list-style: none;
+		padding-top: 50px;
+	}
+
+.blog-holder img {
+	align: center;
 }
 
 

@@ -5,7 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>fashioncommunity</title>
 		<link rel="stylesheet" href="css/app.css">
-		<link href='https://fonts.googleapis.com/css?family=Fira+Sans:400,700,400italic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+		<link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,700,400italic&subset=latin,cyrillic" rel="stylesheet" type="text/css">
 	</head>
 	<body>
 
@@ -32,7 +32,7 @@
 						<li><a href="#/men/">Мужчины</a></li>
 						<li><a href="#/women/">Женщины</a></li>
 						<li><a href="#/blog/">Блог</a></li>
-						<li><a href="#/anketa/">Стать моделью</a></li>
+						<li><a href="#/enroll/">Стать моделью</a></li>
 						<li><a href="#/about/">О нас</a></li>
 					</ul>
 				</nav>
@@ -100,7 +100,19 @@
 		</script>
 
 		<script id="blog-template" type="text/x-handlebars-template">
-			Blog
+			<div class="blog-holder">
+				<ul>
+				{{#each agency.news}}
+					<li>
+						<p><strong>{{this.date}}</strong></p>
+						<p><strong>{{this.text}}</strong></p>
+						{{#if this.pic.SRC}}
+							<p><strong><img src="{{../baseUrl}}{{this.pic.SRC}}"></strong></p>
+						{{/if}}
+					</li>
+				{{/each}}
+				</ul>
+			</div>
 		</script>
 
 		<script id="about-template" type="text/x-handlebars-template">
@@ -111,8 +123,8 @@
 			</div>
 		</script>
 
-		<script id="anketa-template" type="text/x-handlebars-template">
-			Anketa
+		<script id="enroll-template" type="text/x-handlebars-template">
+			Enroll here will be
 		</script>
 
 		<script src="node_modules/jquery/dist/jquery.js"></script>
