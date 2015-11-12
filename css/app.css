@@ -596,7 +596,7 @@ header h1 {
 	}
 }
 
-@media (min-device-width : 2560px) and (min-device-width : 1600px){
+@media (min-device-width : 2560px) and (min-device-width : 1600px) and (min-resolution: 2dppx) {
 	.detail-gallery ul {
 		width: 2000px;
 		height: 1500px;
