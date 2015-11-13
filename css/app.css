@@ -169,7 +169,7 @@ a {
 }
 
 #intro {
-	display: block;
+	display: none;
 	position: fixed;
 	width: 100%;
 	height: 100%;
@@ -295,17 +295,21 @@ header h1 {
 }
 
 @media (min-height: 700px) and (min-width: 736px) {
-	.detail-gallery ul {
+	.detail-gallery-page {
 	    position: absolute;
 	    margin-top: -300px;
 	}
+}
+
+.detail-gallery ul {
+	position: absolute;
 }
 
 .detail-gallery li {
 	background-size: cover !important;
 	background-repeat: no-repeat;
 	background-position: center;
-	display: none;
+	display: block;
     position: relative;
     overflow: hidden;
     height: 600px;
@@ -314,6 +318,10 @@ header h1 {
     width: 400px;
 }
 
+
+.detail-gallery li.horizontal {
+	width: 100% !important;
+}
 
 .detail-gallery .titlepage {
 	padding: 20px;
@@ -373,7 +381,6 @@ header h1 {
     padding: 20px;
 }
 
-
 .detail-gallery .next span {
 	right: 0;
 }
@@ -382,7 +389,8 @@ header h1 {
 	left: 0;
 }
 
-.detail-gallery ul {
+.detail-gallery-page {
+	overflow: hidden;
     width: 800px;
     height: 600px;
     position: absolute;
@@ -393,7 +401,7 @@ header h1 {
 }
 
 @media (min-width: 1280px) {
-	.detail-gallery ul {
+	.detail-gallery-page {
 		width: 1024px;
 		height: 768px;
 		margin-left: -512px;
@@ -412,7 +420,7 @@ header h1 {
 }
 
 @media (min-width: 2048px) {
-	.detail-gallery ul {
+	.detail-gallery-page {
 		width: 1500px;
 		height: 1000px;
 		margin-left: -750px;
@@ -440,10 +448,6 @@ header h1 {
 
 .detail-gallery a:hover {
 	color: #000;
-}
-
-.detail-gallery ul li:nth-child(1), .detail-gallery ul li:nth-child(2) {
-	display: inline-block;
 }
 
 ::-webkit-scrollbar { 
@@ -559,18 +563,14 @@ header h1 {
 	align: center;
 }
 
-
-/* mobile/touch */
-
 @media (min-device-width : 768px) and (max-device-width : 1024px)  {
 	.list-holder ul li div, .index-list div.title {
 		opacity: 1;
 	}
-
 }
 
 @media (max-width: 736px) {
-	.detail-gallery ul {
+	.detail-gallery-page {
 		width: 400px;
 		height: 300px;
 		margin-left: -200px;
@@ -579,6 +579,9 @@ header h1 {
 	.detail-gallery li {
 		width: 200px;
 		height: 300px;
+	}
+	.detail-gallery li.horizontal {
+		width: 1024px !important;
 	}
 	.titlepage, .titlepage h1 {
 		font-size: 90%;
@@ -594,7 +597,7 @@ header h1 {
 }
 
 @media (max-width: 320px) {
-	.detail-gallery ul {
+	.detail-gallery-page {
 		width: 300px;
 		height: 225px;
 		margin-left: -150px;
@@ -619,7 +622,7 @@ header h1 {
 }
 
 @media (min-device-width : 2560px) and (min-device-width : 1600px) and (min-resolution: 2dppx) {
-	.detail-gallery ul {
+	.detail-gallery-page {
 		width: 2000px;
 		height: 1500px;
 		margin-left: -1000px;

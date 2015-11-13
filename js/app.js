@@ -17,7 +17,7 @@
 	var $main = $fcApp.find('#main');
 	var $detail = $('#detail-content');
 
-	// binding events
+    // binding events
 	var bindEvents = function () {
 
 		// open menu
@@ -38,25 +38,17 @@
 			$(this).addClass('active');
 		});
 
-		// next slide
-		var next = function () {
-			if(shown <= cnt-1) {
-				$('.detail-gallery li').css('display','none');
-				shown = shown + 2;
-				$('.detail-gallery li:nth-child('+shown+'), .detail-gallery li:nth-child('+(shown+1)+')').css('display','inline-block');
+		// next/prev lookbook page
+		var turnPage = function (e) {
+			if(page + e.data.dir <= cnt && page + e.data.dir >= 1) {
+				page = page + e.data.dir;
+				$('.detail-gallery-page ul')
+					.css('top','-' + (page-1) * $('.detail-gallery-page').height() + 'px');
 			}
 		}
-		$(document).on('click', '.detail-gallery a.next', next);
-
-		// prev slide
-		var prev = function () {
-			if(shown > 1) {
-				$('.detail-gallery li').css('display','none');
-				shown = shown - 2;
-				$('.detail-gallery li:nth-child('+shown+'), .detail-gallery li:nth-child('+(shown+1)+')').css('display','inline-block');
-			}
-		}
-		$(document).on('click', '.detail-gallery a.prev', prev);
+		$(document)
+			.on('click', '.detail-gallery a.next', {dir: 1}, turnPage)
+			.on('click', '.detail-gallery a.prev', {dir: -1}, turnPage);
 
 		// close detail view
 		var close = function () {
@@ -70,9 +62,9 @@
 		    if (e.keyCode == 27) {
 		    	close();
 		    } else if (e.keyCode == 39) {
-		    	next();
+		    	$('.detail-gallery a.next').click();
 		    } else if(e.keyCode == 37) {
-		    	prev();
+		    	$('.detail-gallery a.prev').click();
 		    }
 		});
 
@@ -104,12 +96,12 @@
 
 	// detail model view
 	var detail = function (gen, id) {
-		shown = 1;
+		page = 1;
 		var model = $.grep(data.models[gen], function(e){return e.id == id});
-		cnt = model[0].photos.length;
 		$detail.html(detailTemplate({model: model[0], baseUrl: baseUrl}));
 		$('#detail-holder').fadeIn();
 		if(!curGen) list(gen);
+		cnt = $('.detail-gallery-page ul')[0].scrollHeight / $('.detail-gallery-page').height();
 	};
 
 	// about page
@@ -121,7 +113,6 @@
 	// blog page
 	var blog = function () {
 		curGen = false;
-		console.log(data);
 		$main.html(blogTemplate({agency: data, baseUrl: baseUrl}));
 	};
 
@@ -136,10 +127,10 @@
 
 	bindEvents ();
 
-	// current displayed photo
-	var shown;
+	// current displayed page
+	var page;
 
-	// count of photos
+	// count of pages
 	var cnt;
 
 	// current gender

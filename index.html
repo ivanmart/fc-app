@@ -63,7 +63,7 @@
 				{{#each models}}
 					<li class="grid-item">
 						<a href="#/{{../gen}}/{{id}}/">
-							<img src="http://www.fashiontime.ru{{photos.[0]}}">
+							<img src="http://www.fashiontime.ru{{photos.[0].src}}">
 							<div>{{name}}</div>
 						</a>
 					</li>
@@ -74,26 +74,30 @@
 
 		<script id="detail-template" type="text/x-handlebars-template">
 			<div class="detail-gallery">
-				<ul>
-					<li>
-						<div class="titlepage">
-							<h1>{{model.name}}</h1>
-							<p><h3>Рост</h3>{{model.growth}}</p>
-							{{#if model.size1}}
-								<p><h3>Обхват груди</h3>{{model.size1}}</p>
-							{{/if}}
-							{{#if model.size2}}
-								<p><h3>Обхват талии</h3>{{model.size2}}</p>
-							{{/if}}
-							{{#if model.size3}}
-								<p><h3>Обхват бедер</h3>{{model.size3}}</p>
-							{{/if}}
-						</div>
-					</li>
-				{{#each model.photos}}
-					<li style="background-image:url({{../baseUrl}}{{this}})"></li>
-				{{/each}}
-				</ul>
+				<div class="detail-gallery-page">
+					<ul>
+						<li>
+							<div class="titlepage">
+								<h1>{{model.name}}</h1>
+								<p><h3>Рост</h3>{{model.growth}}</p>
+								{{#if model.size1}}
+									<p><h3>Обхват груди</h3>{{model.size1}}</p>
+								{{/if}}
+								{{#if model.size2}}
+									<p><h3>Обхват талии</h3>{{model.size2}}</p>
+								{{/if}}
+								{{#if model.size3}}
+									<p><h3>Обхват бедер</h3>{{model.size3}}</p>
+								{{/if}}
+							</div>
+						</li>
+					{{#each model.photos}}
+						<li style="background-image:url({{../baseUrl}}{{this.src}})"
+							{{#if this.isHorizontal}} class="horizontal"{{/if}}
+						></li>
+					{{/each}}
+					</ul>
+				</div>
 				<a class="next"><span>&gt;</span></a>
 				<a class="prev"><span>&lt;</span></a>
 			</div>
