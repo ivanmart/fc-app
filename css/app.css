@@ -621,16 +621,16 @@ header h1 {
 	}
 }
 
-@media (min-device-width : 2560px) and (min-device-width : 1600px) and (min-resolution: 2dppx) {
+@media (min-device-width : 2560px) and (min-device-width : 1400px) {
 	.detail-gallery-page {
-		width: 2000px;
-		height: 1500px;
+		width: 1800px;
+		height: 1350px;
 		margin-left: -1000px;
-		margin-top: -750px;
+		margin-top: -675px;
 	}
 	.detail-gallery li {
-		width: 1000px;
-		height: 1500px;
+		width: 900px;
+		height: 1350px;
 	}
 	header {
 		height: 120px;
