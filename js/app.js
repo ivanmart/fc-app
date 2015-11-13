@@ -107,7 +107,7 @@
 		shown = 1;
 		var model = $.grep(data.models[gen], function(e){return e.id == id});
 		cnt = model[0].photos.length;
-		$detail.html(detailTemplate({model: model[0]}));
+		$detail.html(detailTemplate({model: model[0], baseUrl: baseUrl}));
 		$('#detail-holder').fadeIn();
 		if(!curGen) list(gen);
 	};

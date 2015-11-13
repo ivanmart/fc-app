@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>fashioncommunity</title>
-		<link rel="stylesheet" href="css/app.css?v4">
+		<link rel="stylesheet" href="css/app.css?v5">
 		<link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,700,400italic&subset=latin,cyrillic" rel="stylesheet" type="text/css">
 	</head>
 	<body>
@@ -91,7 +91,7 @@
 						</div>
 					</li>
 				{{#each model.photos}}
-					<li><img src="http://www.fashiontime.ru{{this}}"></li>
+					<li style="background-image:url({{../baseUrl}}{{this}})"></li>
 				{{/each}}
 				</ul>
 				<a class="next"><span>&gt;</span></a>

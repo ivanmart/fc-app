@@ -302,6 +302,9 @@ header h1 {
 }
 
 .detail-gallery li {
+	background-size: cover !important;
+	background-repeat: no-repeat;
+	background-position: center;
 	display: none;
     position: relative;
     overflow: hidden;
@@ -399,6 +402,25 @@ header h1 {
 	.detail-gallery li {
 		width: 512px;
 		height: 768px;
+	}
+	.titlepage, .titlepage h1 {
+		font-size: 150%;
+	}
+	.titlepage h3 {
+		font-size: 15px;
+	}
+}
+
+@media (min-width: 2048px) {
+	.detail-gallery ul {
+		width: 1500px;
+		height: 1000px;
+		margin-left: -750px;
+		margin-top: -520px;
+	}
+	.detail-gallery li {
+		width: 750px;
+		height: 1000px;
 	}
 	.titlepage, .titlepage h1 {
 		font-size: 150%;
