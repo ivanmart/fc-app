@@ -387,6 +387,7 @@ header h1 {
 
 .detail-gallery .prev {
 	left: 0;
+	display: none;
 }
 
 .detail-gallery-page {

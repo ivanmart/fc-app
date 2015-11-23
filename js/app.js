@@ -42,6 +42,8 @@
 		var turnPage = function (e) {
 			if(page + e.data.dir <= cnt && page + e.data.dir >= 1) {
 				page = page + e.data.dir;
+				$('.prev').css('display', (page==1 ? 'none' : 'block'));
+				$('.next').css('display', (page==cnt ? 'none' : 'block'));
 				$('.detail-gallery-page ul')
 					.css('top','-' + (page-1) * $('.detail-gallery-page').height() + 'px');
 			}
