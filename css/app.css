@@ -241,6 +241,11 @@ header h1 {
 .list-holder li a {
 	text-align: center;
 	color: #000;
+    width: 225px;
+    height: 282px;
+    display: block;
+	background-position: top center;
+    background-size: cover;
 }
 
 .list-holder img {
