@@ -253,7 +253,7 @@ header h1 {
 }
 
 .list-holder li:hover {
-	transform: scale(1.15);
+	transform: scale(1.13);
 }
 
 .list-holder li:hover img {
