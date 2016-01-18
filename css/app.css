@@ -418,10 +418,12 @@ header h1 {
     margin-top: -300px;
 }
 
-@media (min-width: 1280px) {
-	.detail-gallery-page {
+@media (min-width: 1280px) and (min-height: 800px) {
+	.detail-gallery-page, .detail-gallery-page ul {
 		width: 1024px;
 		height: 768px;
+	}
+	.detail-gallery-page {
 		margin-left: -512px;
 		margin-top: -370px;
 	}
@@ -437,10 +439,12 @@ header h1 {
 	}
 }
 
-@media (min-width: 2048px) {
-	.detail-gallery-page {
+@media (min-width: 2048px) and (min-height: 1228px){
+	.detail-gallery-page, .detail-gallery-page ul {
 		width: 1500px;
 		height: 1000px;
+	}
+	.detail-gallery-page {
 		margin-left: -750px;
 		margin-top: -520px;
 	}
@@ -505,9 +509,9 @@ header h1 {
 	height:100%;
 }
 
-	.index-list div.bkg {
-		background-size: cover !important;
-	}
+.index-list div.bkg {
+	background-size: cover !important;
+}
 
 .index-list a {
 	position: absolute;
@@ -581,25 +585,28 @@ header h1 {
 	align: center;
 }
 
+/* mobile */
+
 @media (min-device-width : 768px) and (max-device-width : 1024px)  {
 	.list-holder ul li div, .index-list div.title {
 		opacity: 1;
 	}
 }
 
-@media (max-width: 736px) {
-	.detail-gallery-page {
+/* RD */
+
+@media screen and (max-width: 736px), screen and (max-height: 600px) {
+	.detail-gallery-page, .detail-gallery-page ul {
 		width: 400px;
 		height: 300px;
+	}
+	.detail-gallery-page {
 		margin-left: -200px;
 		margin-top: -150px;
 	}
 	.detail-gallery li {
 		width: 200px;
 		height: 300px;
-	}
-	.detail-gallery li.horizontal {
-		width: 1024px !important;
 	}
 	.titlepage, .titlepage h1 {
 		font-size: 90%;
@@ -614,10 +621,12 @@ header h1 {
 	}
 }
 
-@media (max-width: 320px) {
-	.detail-gallery-page {
+@media screen and (max-width: 320px), screen and (max-height: 300px) {
+	.detail-gallery-page, .detail-gallery-page ul {
 		width: 300px;
 		height: 225px;
+	}
+	.detail-gallery-page {
 		margin-left: -150px;
 		margin-top: -112px;
 	}
@@ -640,9 +649,11 @@ header h1 {
 }
 
 @media (min-device-width : 2560px) and (min-device-width : 1400px) {
-	.detail-gallery-page {
+	.detail-gallery-page, .detail-gallery-page ul {
 		width: 1800px;
 		height: 1350px;
+	}
+	.detail-gallery-page {
 		margin-left: -1000px;
 		margin-top: -675px;
 	}
@@ -716,7 +727,8 @@ header h1 {
 
 	.titlepage, .titlepage h1 {
 	    font-size: 210%;
-	}
+	    line-height: 100%;
+   	}
 
 	.detail-gallery .titlepage {
 	    padding: 70px;
