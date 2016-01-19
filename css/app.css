@@ -70,7 +70,7 @@ a {
     transition: all .3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
 }
 
-.menu, .list-holder li, .list-holder li img, .list-holder li div, .index-list li .bkg, .index-list li .title {
+.menu, .list-holder li a, .list-holder li img, .list-holder li div, .index-list li .bkg, .index-list li .title {
 	-webkit-transition: all .4s cubic-bezier(1, 0.045, 0.355, 1.000);
     -moz-transition: all .4s cubic-bezier(1, 0.045, 0.355, 1.000);
     -ms-transition: all .4s cubic-bezier(1, 0.045, 0.355, 1.000);
@@ -235,7 +235,7 @@ header h1 {
 	cursor: pointer;
 	width: 205px;
     height: 262px;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .list-holder li a {
@@ -252,7 +252,7 @@ header h1 {
 	width: 225px;
 }
 
-.list-holder li:hover {
+.list-holder li a:hover {
 	transform: scale(1.13);
 }
 
