@@ -17,6 +17,8 @@
 	var $main = $fcApp.find('#main');
 	var $detail = $('#detail-content');
 
+	if(is.touchDevice()) $('body').addClass('touch');
+
     // binding events
 	var bindEvents = function () {
 

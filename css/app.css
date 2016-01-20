@@ -225,8 +225,69 @@ header h1 {
 
 
 /* images list */
+
 .list-holder {
-	padding: 0 50px 50px 50px;
+	margin: auto;
+}
+
+@media (max-width: 2715px) {
+	.list-holder {
+		width: 2470px;
+	}
+}
+
+@media (max-width: 2470px) {
+	.list-holder {
+		width: 2225px;
+	}
+}
+
+@media (max-width: 2225px) {
+	.list-holder {
+		width: 1980px;
+	}
+}
+
+@media (max-width: 1980px) {
+	.list-holder {
+		width: 1735px;
+	}
+}
+
+@media (max-width: 1735px) {
+	.list-holder {
+		width: 1490px;
+	}
+}
+
+@media (max-width: 1490px) {
+	.list-holder {
+		width: 1245px;
+	}
+}
+
+@media (max-width: 1245px) {
+	.list-holder {
+		width: 1000px;
+	}
+}
+
+@media (max-width: 1000px) {
+	.list-holder {
+		width: 755px;
+	}
+}
+
+@media (max-width: 755px) {
+	.list-holder {
+		width: 510px;
+	}
+}
+
+@media (max-width: 510px) {
+	.list-holder {
+		width: 265px;
+	}
 }
 
 .list-holder li {
@@ -585,12 +646,10 @@ header h1 {
 	align: center;
 }
 
-/* mobile */
+/* show names for touch devices */
 
-@media (min-device-width : 768px) and (max-device-width : 1024px)  {
-	.list-holder ul li div, .index-list div.title {
-		opacity: 1;
-	}
+.touch .list-holder ul li div, .touch .index-list div.title {
+	opacity: 1;
 }
 
 /* RD */
@@ -616,9 +675,6 @@ header h1 {
 		font-size: 10px;
 	    padding-top: 15px;
 	}
-	.list-holder {
-		padding-left: 109px;
-	}
 }
 
 @media screen and (max-width: 320px), screen and (max-height: 300px) {
@@ -642,9 +698,6 @@ header h1 {
 	.titlepage h3 {
 		font-size: 10px;
 	    padding-top: 15px;
-	}
-	.list-holder {
-		padding-left: 28px;
 	}
 }
 
