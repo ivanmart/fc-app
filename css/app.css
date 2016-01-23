@@ -70,7 +70,7 @@ a {
     transition: all .3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
 }
 
-.menu, .list-holder li a, .list-holder li img, .list-holder li div, .index-list li .bkg, .index-list li .title {
+.menu, .list-holder li a, .list-holder li img, .list-holder li span, .index-list li .bkg, .index-list li .title {
 	-webkit-transition: all .4s cubic-bezier(1, 0.045, 0.355, 1.000);
     -moz-transition: all .4s cubic-bezier(1, 0.045, 0.355, 1.000);
     -ms-transition: all .4s cubic-bezier(1, 0.045, 0.355, 1.000);
@@ -230,83 +230,17 @@ header h1 {
 	margin: auto;
 }
 
-@media (max-width: 2715px) {
-	.list-holder {
-		width: 2470px;
-	}
-}
-
-@media (max-width: 2470px) {
-	.list-holder {
-		width: 2225px;
-	}
-}
-
-@media (max-width: 2225px) {
-	.list-holder {
-		width: 1980px;
-	}
-}
-
-@media (max-width: 1980px) {
-	.list-holder {
-		width: 1735px;
-	}
-}
-
-@media (max-width: 1735px) {
-	.list-holder {
-		width: 1490px;
-	}
-}
-
-@media (max-width: 1490px) {
-	.list-holder {
-		width: 1245px;
-	}
-}
-
-@media (max-width: 1245px) {
-	.list-holder {
-		width: 1000px;
-	}
-}
-
-@media (max-width: 1000px) {
-	.list-holder {
-		width: 755px;
-	}
-}
-
-@media (max-width: 755px) {
-	.list-holder {
-		width: 510px;
-	}
-}
-
-@media (max-width: 510px) {
-	.list-holder {
-		width: 265px;
-	}
-}
-
 .list-holder li {
 	list-style: none;
-	padding:20px;
 	cursor: pointer;
-	width: 205px;
-    height: 262px;
+	width: 10%;
+    height: 282px;
     overflow: visible;
 }
 
-.list-holder li a {
-	text-align: center;
-	color: #000;
-    width: 225px;
-    height: 282px;
-    display: block;
-	background-position: top center;
-    background-size: cover;
+.list-holder ul li div {
+	padding: 10px;
+	height: 262px;
 }
 
 .list-holder img {
@@ -324,21 +258,90 @@ header h1 {
     filter: brightness(50%);
 }
 
-.list-holder li:hover div {
+.list-holder li a:hover span {
 	opacity: 1;
 	transform: translateY(-10px);
 }
 
-.list-holder ul li div {
+.list-holder ul li a span {
+	display: inline;
 	position: absolute;
-	width: 225px;
+	width: 100%;
 	bottom: 40px;
+	left: 0px;
 	color: #fff;
 	opacity: 0;
 	text-transform: uppercase;
 	font-size: 15px;
 	text-shadow: 0 0 10px rgba(0,0,0,0.8);
 }
+
+@media (max-width: 2000px) {
+	.list-holder li {
+		width: 12.5%;
+	}
+}
+
+@media (max-width: 1850px) {
+	.list-holder li {
+		width: 14.28%;
+	}
+}
+
+@media (max-width: 1500px) {
+	.list-holder li {
+		width: 16.66%;
+	}
+}
+
+@media (max-width: 1300px) {
+	.list-holder li {
+		width: 20%;
+	}
+}
+
+@media (max-width: 1100px) {
+	.list-holder li {
+		width: 25%;
+	}
+}
+
+@media (max-width: 900px) {
+	.list-holder li {
+		width: 33.3%;
+	}
+}
+
+@media (max-width: 650px) {
+	.list-holder li {
+		width: 50%;
+	}
+}
+
+@media (max-width: 414px) {
+	.list-holder li {
+		width: 100%;
+		height: 520px;
+	}
+	.list-holder ul li div {
+		height: 500px;
+	}
+	.list-holder ul li a span {
+		font-size: 160%;
+		bottom: 80px;
+	}
+}
+
+.list-holder li a {
+	text-align: center;
+	color: #000;
+    height: 100%;
+    display: block;
+	background-position: top center;
+    background-size: cover;
+}
+
+
 
 
 /* slider */
@@ -648,7 +651,7 @@ header h1 {
 
 /* show names for touch devices */
 
-.touch .list-holder ul li div, .touch .index-list div.title {
+.touch .list-holder ul li span, .touch .index-list div.title {
 	opacity: 1;
 }
 

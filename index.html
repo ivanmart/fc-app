@@ -5,7 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>fashioncommunity</title>
 		<link rel="icon" type="image/png" href="http://www.fashioncommunity.su/favicon.ico">
-		<link rel="stylesheet" href="css/app.css?v12">
+		<link rel="stylesheet" href="css/app.css?v13">
 	</head>
 	<body>
 
@@ -62,9 +62,11 @@
 				<ul>
 				{{#each models}}
 					<li class="grid-item">
-						<a href="#/{{../gen}}/{{id}}/" style="background-image:url(http://www.fashiontime.ru{{photos.[0].src}})">
-							<div>{{name}}</div>
-						</a>
+						<div>
+							<a href="#/{{../gen}}/{{id}}/" style="background-image:url(http://www.fashiontime.ru{{photos.[0].src}})">
+								<span>{{name}}</span>
+							</a>
+						</div>
 					</li>
 				{{/each}}
 				</ul>
